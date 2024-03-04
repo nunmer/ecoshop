@@ -1,0 +1,66 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.container {
+    display: flex;
+    height: 100vh;
+}
+.image-section {
+    flex: 2;
+    background-image: url('../images/login-img.png'); /* Insert your image URL here */
+    background-size: cover;
+    background-position: center;
+}
+.login-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+}
+.login-form {
+    width: 70%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.login-form h2 {
+    text-align: center;
+}
+.login-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.login-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.login-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+.forgot-password {
+    margin-top: 10px;
+    text-align: center;
+}
+.register-button {
+    margin-top: 10px;
+    text-align: center;
+}

@@ -28,5 +28,4 @@ venv/
 *.py~  # backup files
 db.sqlite3
 media/
-static/
 node_modules/

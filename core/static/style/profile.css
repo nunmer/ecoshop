@@ -1,0 +1,212 @@
+.profile {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+.left-side {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align items in the center */
+}
+.profile-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    position: relative; /* Relative positioning */
+}
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.change-pfp-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute; /* Absolute positioning */
+    bottom: 0;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+}
+.profile-info {
+    text-align: center;
+    max-width: 200px; /* Limiting the width for better alignment */
+}
+.profile-info p {
+    margin: 5px 0;
+}
+.profile-label {
+    font-weight: bold;
+}
+.input-field {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.input-field:disabled {
+    background-color: #f0f0f0;
+}
+.right-side {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+}
+.my-products {
+    background-color: #658C4A;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.navbar {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.navbar-left, .navbar-center, .navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    max-width: 100px; /* Adjust as needed */
+}
+
+.search-bar {
+    width: 300px; /* Adjust as needed */
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.navbar-right .icon {
+    margin-left: 10px;
+}
+
+.navigation {
+    text-align: center;
+}
+
+.navigation ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navigation ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-bar {
+    width: 500px; /* Adjust width as needed */
+    padding: 8px 30px 8px 10px; /* Adjust padding to create space for icon */
+    border: 1px solid #ccc; /* Add a subtle border */
+    border-radius: 5px;
+}
+
+.search-icon {
+    position: absolute;
+    height: 10px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.navbar-left, .navbar-right {
+    padding: 0 30px; /* Add padding to both left and right sides */
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product {
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.product:hover {
+    transform: translateY(-10px); /* Move product up on hover */
+}
+
+.product-name{
+    font-weight: bold;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

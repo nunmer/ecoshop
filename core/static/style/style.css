@@ -1,0 +1,309 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.green-block {
+    background-color: #658C4A;
+    color: white;
+    width: 100%;
+    height: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.0em;
+}
+
+.navbar {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.navbar-left, .navbar-center, .navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    max-width: 100px; /* Adjust as needed */
+}
+
+.search-bar {
+    width: 300px; /* Adjust as needed */
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.navbar-right .icon {
+    margin-left: 10px;
+}
+
+.navigation {
+    text-align: center;
+}
+
+.navigation ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navigation ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-bar {
+    width: 500px; /* Adjust width as needed */
+    padding: 8px 30px 8px 10px; /* Adjust padding to create space for icon */
+    border: 1px solid #ccc; /* Add a subtle border */
+    border-radius: 5px;
+}
+
+.search-icon {
+    position: absolute;
+    height: 10px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.navbar-left, .navbar-right {
+    padding: 0 30px; /* Add padding to both left and right sides */
+}
+
+.split-container {
+    display: flex;
+}
+
+.left-side {
+    flex: 1;
+    padding: 10px; /* Decrease padding to reduce height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center align items vertically */
+    align-items: center; /* Center align items horizontally */
+    text-align: center; /* Center align text */
+}
+
+.main-heading {
+    width: 100%; /* Set width to ensure text wraps */
+    font-size: 50px; /* Adjust font size as needed */
+    line-height: 1.2; /* Adjust line height for spacing */
+}
+
+.sub-heading {
+    width: 100%; /* Set width to ensure text wraps */
+    font-size: 20px; /* Adjust font size as needed */
+    line-height: 0.5; /* Adjust line height for spacing */
+}
+
+.text-container {
+    margin-bottom: 20px;
+}
+.right-side {
+    flex: 1;
+    padding: 10px; /* Decrease padding to reduce height */
+}
+.main-heading {
+    white-space: pre-line; /* Preserve line breaks */
+}
+.text-container {
+    margin-bottom: 20px;
+}
+
+.right-side {
+    flex: 1;
+}
+
+.rounded-button {
+    border: none;
+    border-radius: 20px;
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 150px;
+}
+
+.rounded-button:hover {
+    background-color: darkgreen;
+}
+
+.container {
+    display: flex;
+    margin-top: 60px;
+}
+
+.column {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    position: relative; /* Positioning context for absolute positioning */
+}
+
+.category-heading {
+    margin-bottom: 100px; /* Adjust to move the text lower */
+    font-size: 40px; /* Adjust to make the text bigger */
+    color: darkgreen; /* Set the text color to green */
+}
+
+.category-block {
+    position: relative; /* Positioning context for absolute positioning */
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.category-block img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.category-button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    position: absolute;
+    bottom: 25px; /* Adjust bottom spacing */
+    left: 10px; /* Adjust left spacing */
+}
+
+.green-container {
+    background-color: green;
+    padding: 20px;
+    text-align: center;
+    margin-top:40px;
+}
+
+.main-heading1 {
+    font-size: 28px;
+    color: white;
+}
+
+.sub-heading1 {
+    font-size: 18px;
+    color: white; /* Grey color */
+    margin-bottom: 20px;
+}
+
+.product-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product-description {
+    margin-top: 10px;
+    font-size: 16px;
+    color: white;
+}
+
+.product-price {
+    font-size: 14px;
+    color: white; /* Grey color */
+}
+.product-description,
+.product-price {
+    text-align: left;
+    margin-top: 10px;
+    font-size: 16px;
+}
+.category-button:hover {
+    background-color: #333; /* Change to grey or a lighter color on hover */
+}
+
+.new-container {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.new-text-container {
+    flex: 1;
+}
+
+.new-main-heading {
+    color: black;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.new-sub-heading {
+    color: black;
+    font-size: 16px;
+}
+
+.new-arrows-container {
+    margin-left: auto;
+}
+
+.new-product-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.new-product {
+    flex: 1;
+}
+
+.new-product img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.new-product-description {
+    color: black;
+    margin-top: 10px;
+}
+
+.new-product-price {
+    color: green; /* Change to green */
+    margin-top: 5px;
+}
+
+.new-button-container {
+    margin-top: 20px; /* Adjust the margin-top as needed */
+}
+
+.new-rounded-button {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
