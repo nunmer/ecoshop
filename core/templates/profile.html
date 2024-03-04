@@ -67,7 +67,23 @@
         <div class="right-side">
             <div class="my-products">
                 <h2>My Products</h2>
-                <!-- List your products here -->
+            </div>
+
+            <div class="product-container">
+                {% for product in products %}
+                <div class="product" onmouseover="animateProduct(this)" onmouseout="resetProduct(this)">
+                    <a href="#">
+                        {% if product.image_link %}
+                            <img src="{{ product.image_link }}" alt="{{ product.name }}">
+                        {% else %}
+                            <img src="../static/images/default-product.jpg" width="300" alt="{{ product.name }}">
+                        {% endif %}
+                    </a>
+                    <p class="product-name">{{ product.name }}</p>
+                    <p class="product-description">{{ product.description }}</p>
+                    <p class="product-price">{{ product.price }} тг</p>
+                </div>
+                {% endfor %}
             </div>
         </div>
     </div>

@@ -14,8 +14,11 @@ class ProfileView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         user = self.request.user
-
+        
+        products = models.Product.objects.filter(owner_id = user.id)
         context['user'] = user
+        context['products'] = products
+
         return context
 
 
