@@ -50,27 +50,38 @@
     </div>
     <div class="container">
         <h2>Create Product</h2>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
+            {{ form.non_field_errors }}
             <div class="form-group">
                 <label for="name">Product Name:</label>
-                <input type="text" id="name" name="name" required>
+                {{ form.name.errors }}
+                <input type="text" id="name" name="name" value="{{ form.name.value |default:''}}" maxlength="255" required>
             </div>
             <div class="form-group">
                 <label for="description">Description:</label>
-                <textarea id="description" name="description" rows="4" required></textarea>
+                {{ form.description.errors }}
+                <textarea id="description" name="description" cols="40" rows="10" required>{{ form.description.value |default:'' }}</textarea>
             </div>
             <div class="form-group">
                 <label for="price">Price:</label>
-                <input type="text" id="price" name="price" required>
+                {{ form.price.errors }}
+                <input type="number" id="price" name="price" value="{{ form.price.value |default:'' }}" step="0.01" required>
             </div>
             <div class="form-group">
-                <label for="quantity">Quantity:</label>
-                <input type="text" id="quantity" name="quantity" required>
+                <label for="category">Category:</label>
+                {{ form.category.errors }}
+                {{ form.category }}
             </div>
-            <div class="form-group file-upload">
-                <input type="file" id="picture" name="picture" class="file-input">
-                <button type="button">Add Picture</button>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                {{ form.location.errors }}
+                {{ form.location }}
+            </div>
+            <div class="form-group">
+                <label for="picture">Picture:</label>
+                {{ form.image_link.errors }}
+                <input type="file" id="picture" name="image_link" required>
             </div>
             <button type="submit">Create Product</button>
         </form>

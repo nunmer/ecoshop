@@ -35,7 +35,7 @@
     <div class="navigation">
         <ul>
             <li><a href="#">Новинки!</a></li>
-            <li><a href="#">Одежда</a></li>
+            <li><a href="/products/1">Одежда</a></li>
             <li><a href="#">Банные</a></li>
             <li><a href="#">Постельные</a></li>
             <li><a href="#">Для Дома</a></li>
@@ -73,8 +73,9 @@
                 {% for product in products %}
                 <div class="product" onmouseover="animateProduct(this)" onmouseout="resetProduct(this)">
                     <a href="#">
-                        {% if product.image_link %}
-                            <img src="{{ product.image_link }}" alt="{{ product.name }}">
+                        {% if product.image_link %} 
+                            <img src="../../product_images/{{ product.image_link }}" alt="{{ product.name }}" width="300">
+                        {% comment %} <img src="{{ product.image_link }}" alt="{{ product.name }}"> {% endcomment %}
                         {% else %}
                             <img src="../static/images/default-product.jpg" width="300" alt="{{ product.name }}">
                         {% endif %}
