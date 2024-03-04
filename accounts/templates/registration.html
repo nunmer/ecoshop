@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="../static/style/reg.css">
+    <script src="../static/js/reg.js"></script>
+</head>
+<body> 
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form class="login-form" action="{% url 'register' %}" method="post">
+                <h1>Create Account</h1>
+                {% csrf_token %}
+                {% for field in form %}
+                    {{ field }}
+                    {% for error in field.errors %}
+                        <p class="error-message">{{ error }}</p>
+                    {% endfor %}
+                {% endfor %}   
+                <span>or use your email for registration</span>
+                {% comment %} <input type="text" placeholder="Name" />
+                <input type="password" placeholder="Email" />
+                <input type="password" placeholder="Password" /> {% endcomment %}
+                <button>Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form class="login-form" action="#" method="post">
+                {% csrf_token %}
+                <h1>Sign in</h1>
+                <span>or use your account</span>
+                {% for field in form %}
+                    {{ field }}
+                    {% for error in field.errors %}
+                        <p class="error-message">{{ error }}</p>
+                    {% endfor %}
+                {% endfor %}
+                <a href="#">Forgot your password?</a>
+                <button>Sign In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signup">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        (function(d, m){
+            var kommunicateSettings = 
+                {"appId":"31f9fde9613e02a286b26865cc67d4969","popupWidget":true,"automaticChatOpenOnNavigation":true};
+            var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+            s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+            var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+            window.kommunicate = m; m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
+    /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+    </script>
+</body>
+</html>

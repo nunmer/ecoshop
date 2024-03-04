@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Shop</title>
+    <link rel="stylesheet" href="../static/style/style.css">
+</head>
+<body>
+    <div class="green-block">
+        Бесплатная доставка при покупке товаров от 20 тыс тенге
+    </div>
+
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="../static/images/eco-logo.png" alt="Logo" class="logo">
+        </div>
+        <div class="navbar-center">
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search">
+                <img src="../static/images/search-icon.png" alt="Search" class="search-icon">
+            </div>
+        </div>
+        <div class="navbar-right">
+            {% if user.is_authenticated %}
+                <a href="{% url 'profile' %}">{{ user.username }}</a>
+                <a href="auth/logout"><img src="../static/images/logout-icon.png" width="30" alt="Logout" class="icon"></a>
+            {% else %}
+                <p>Авторизоваться</p>
+                <a href="/login"><img src="../static/images/user-icon.png" alt="User" class="icon"></a>
+            {% endif %}
+            <img src="../static/images/basket-icon.png" alt="Basket" class="icon">
+        </div>
+    </nav>
+
+    <div class="navigation">
+        <ul>
+            <li><a href="#">Новинки!</a></li>
+            <li><a href="/products/1">Одежда</a></li>
+            <li><a href="#">Банные</a></li>
+            <li><a href="#">Постельные</a></li>
+            <li><a href="#">Для Дома</a></li>
+            <li><a href="#">Мебель</a></li>
+            <li><a href="#">Обувь</a></li>
+            <li><a href="#">Аксессуары</a></li>
+        </ul>
+    </div>
+
+    <div class="split-container">
+        <div class="left-side">
+            <div class="text-container">
+                <h2 class="main-heading">Экологические приборы, здоровое тело</h2>
+                <p class="sub-heading">Улучшите свои гастрономические впечатления и</p>
+                <p class="sub-heading">начните свой путь к здоровью прямо сейчас.</p>
+            </div>
+            <button class="rounded-button">Узнать Больше</button>
+        </div>
+        <div class="right-side">
+            <img src="../static/images/table-picture.png" alt="Your Image">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="column">
+            <h1 class="category-heading">Категории для тебя</h1>
+        </div>
+        <div class="column">
+            <div class="category-block">
+                <img src="../static/images/clothing-card.png" alt="Clothing">
+                <button class="category-button">Одежда</button>
+            </div>
+        </div>
+        <div class="column">
+            <div class="category-block">
+                <img src="../static/images/goods-card.png" alt="Home">
+                <button class="category-button">Для дома</button>
+            </div>
+        </div>
+        <div class="column">
+            <div class="category-block">
+                <img src="../static/images/bed-card.png" alt="Bedding">
+                <button class="category-button">Постельные</button>
+            </div>
+        </div>
+        <div class="column">
+            <div class="category-block">
+                <img src="../static/images/furniture-card.png" alt="Furniture">
+                <button class="category-button">Мебель</button>
+            </div>
+        </div>
+        <div class="column">
+            <div class="category-block">
+                <img src="../static/images/acs-card.png" alt="Accessories">
+                <button class="category-button">Аксессуары</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="green-container">
+        <h2 class="main-heading1">Наши самые востребованные продукты</h2>
+        <p class="sub-heading1">Хорошо для окружающей среды, хорошо для вас</p>
+        <div class="product-container">
+            <div class="product">
+                <img src="../static/images/product1.png" alt="Product 1">
+                <p class="product-description">Альпийские принадлежности | Мыло для рук «Кедр + Сандал»</p>
+                <p class="product-price">10 000 тг</p>
+            </div>
+            <div class="product">
+                <img src="../static/images/product2.png" alt="Product 2">
+                <p class="product-description">Женские шерстяные тапочки на классической подошве с низкой спинкой</p>
+                <p class="product-price">5000 тг</p>
+            </div>
+            <div class="product">
+                <img src="../static/images/product3.png" alt="Product 3">
+                <p class="product-description">Большая корзина с рисунком</p>
+                <p class="product-price">8000 тг</p>
+            </div>
+            <div class="product">
+                <img src="../static/images/product4.png" alt="Product 4">
+                <p class="product-description">Мелиора | Эко стиральный порошок</p>
+                <p class="product-price">15 000 тг</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="new-container">
+        <!-- <div class="new-text-container">
+            <h2 class="new-main-heading">Новое Поступление</h2>
+            <p class="new-sub-heading">Будьте первым, кто получит первоклассный продукт</p>
+        </div> -->
+       
+        <div class="new-product-container">
+            <div class="new-product">
+                <img src="../static/images/newproduct1.png" alt="Product 1">
+                <p class="new-product-description">Кресло Lollygagger из переработанного сырья</p>
+                <p class="new-product-price">50 000 тг</p>
+            </div>
+            <div class="new-product">
+                <img src="../static/images/newproduct2.png" alt="Product 2">
+                <p class="new-product-description">Кресло Lollygagger из переработанного сырья</p>
+                <p class="new-product-price">75 000 тг</p>
+            </div>
+            <div class="new-product">
+                <img src="../static/images/newproduct3.png" alt="Product 3">
+                <p class="new-product-description">Переработанное двухместный диван Nisswa</p>
+                <p class="new-product-price">150 000 тг</p>
+            </div>
+            <div class="new-product">
+                <img src="../static/images/newproduct4.png" alt="Product 4">
+                <p class="new-product-description">Lollygagger шезлонг из переработанных материалов</p>
+                <p class="new-product-price">200 000 тг</p>
+            </div>
+            <!-- Repeat for other products -->
+        </div>
+        <!-- <div class="new-button-container">
+            <button class="new-rounded-button">Узнать больше</button>
+        </div> -->
+    </div>
+    <script type="text/javascript">
+        (function(d, m){
+            var kommunicateSettings = 
+                {"appId":"31f9fde9613e02a286b26865cc67d4969","popupWidget":true,"automaticChatOpenOnNavigation":true};
+            var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+            s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+            var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+            window.kommunicate = m; m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
+    </script>
+</body>
+</html>

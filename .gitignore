@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches
+*.sqlite3
+*.pyc
+
+# Log files
+*.log
+
+# Virtual environment
+venv/
+.env
+
+# IDEs
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.idea/
+
+# Django related
+*.sqlite3
+*.pyc
+*.pyo
+*.pyd
+*.py~  # backup files
+db.sqlite3
+media/
+static/
+node_modules/

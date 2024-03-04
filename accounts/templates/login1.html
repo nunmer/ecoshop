@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<link rel="stylesheet" href="../static/style/auth.css">
+</head>
+<body>
+    <div class="container">
+        <div class="image-section"></div>
+        <div class="login-section">
+            <form class="login-form" action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Войти">
+                <div class="forgot-password"><a href="#">Забыли пароль?</a></div>
+            </form>
+            <div class="register-button"><a href="/register">Зарегистрироваться</a></div>
+        </div>
+    </div>
+</body>
+</html>
