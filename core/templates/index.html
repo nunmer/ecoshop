@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
     <title>Eco Shop</title>
     <link rel="stylesheet" href="../static/style/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+    
 </head>
 <body>
     <div class="green-block">
@@ -63,101 +70,102 @@
     </div>
 
     <div class="container">
-        <div class="column">
-            <h1 class="category-heading">Категории для тебя</h1>
-        </div>
-        <div class="column">
-            <div class="category-block">
-                <img src="../static/images/clothing-card.png" alt="Clothing">
-                <button class="category-button">Одежда</button>
+        <div class="row">
+            <div class="col">
+                <div class="product">
+                    <img src="../static/images/newproduct1.png" alt="Product 1">
+                    <div class="product-details">
+                        <h2 class="product-title">Product 1</h2>
+                        <p class="product-description">Description of Product 1</p>
+                        <p class="product-price">$19.99</p>
+                        <button class="btn-buy">Buy Now</button>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="column">
-            <div class="category-block">
-                <img src="../static/images/goods-card.png" alt="Home">
-                <button class="category-button">Для дома</button>
+            <div class="col">
+                <div class="product">
+                    <img src="../static/images/newproduct2.png" alt="Product 2">
+                    <div class="product-details">
+                        <h2 class="product-title">Product 2</h2>
+                        <p class="product-description">Description of Product 2</p>
+                        <p class="product-price">$24.99</p>
+                        <button class="btn-buy">Buy Now</button>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="column">
-            <div class="category-block">
-                <img src="../static/images/bed-card.png" alt="Bedding">
-                <button class="category-button">Постельные</button>
+            <div class="col">
+                <div class="product">
+                    <img src="../static/images/newproduct3.png" alt="Product 3">
+                    <div class="product-details">
+                        <h2 class="product-title">Product 3</h2>
+                        <p class="product-description">Description of Product 3</p>
+                        <p class="product-price">$29.99</p>
+                        <button class="btn-buy">Buy Now</button>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="column">
-            <div class="category-block">
-                <img src="../static/images/furniture-card.png" alt="Furniture">
-                <button class="category-button">Мебель</button>
+            <div class="col">
+                <div class="product">
+                    <img src="../static/images/newproduct4.png" alt="Product 4">
+                    <div class="product-details">
+                        <h2 class="product-title">Product 4</h2>
+                        <p class="product-description">Description of Product 4</p>
+                        <p class="product-price">$34.99</p>
+                        <button class="btn-buy">Buy Now</button>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="column">
-            <div class="category-block">
-                <img src="../static/images/acs-card.png" alt="Accessories">
-                <button class="category-button">Аксессуары</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="green-container">
-        <h2 class="main-heading1">Наши самые востребованные продукты</h2>
-        <p class="sub-heading1">Хорошо для окружающей среды, хорошо для вас</p>
-        <div class="product-container">
-            <div class="product">
-                <img src="../static/images/product1.png" alt="Product 1">
-                <p class="product-description">Альпийские принадлежности | Мыло для рук «Кедр + Сандал»</p>
-                <p class="product-price">10 000 тг</p>
-            </div>
-            <div class="product">
-                <img src="../static/images/product2.png" alt="Product 2">
-                <p class="product-description">Женские шерстяные тапочки на классической подошве с низкой спинкой</p>
-                <p class="product-price">5000 тг</p>
-            </div>
-            <div class="product">
-                <img src="../static/images/product3.png" alt="Product 3">
-                <p class="product-description">Большая корзина с рисунком</p>
-                <p class="product-price">8000 тг</p>
-            </div>
-            <div class="product">
-                <img src="../static/images/product4.png" alt="Product 4">
-                <p class="product-description">Мелиора | Эко стиральный порошок</p>
-                <p class="product-price">15 000 тг</p>
-            </div>
+            <!-- Add more product divs here -->
         </div>
     </div>
 
-    <div class="new-container">
-        <!-- <div class="new-text-container">
-            <h2 class="new-main-heading">Новое Поступление</h2>
-            <p class="new-sub-heading">Будьте первым, кто получит первоклассный продукт</p>
-        </div> -->
-       
-        <div class="new-product-container">
-            <div class="new-product">
-                <img src="../static/images/newproduct1.png" alt="Product 1">
-                <p class="new-product-description">Кресло Lollygagger из переработанного сырья</p>
-                <p class="new-product-price">50 000 тг</p>
-            </div>
-            <div class="new-product">
-                <img src="../static/images/newproduct2.png" alt="Product 2">
-                <p class="new-product-description">Кресло Lollygagger из переработанного сырья</p>
-                <p class="new-product-price">75 000 тг</p>
-            </div>
-            <div class="new-product">
-                <img src="../static/images/newproduct3.png" alt="Product 3">
-                <p class="new-product-description">Переработанное двухместный диван Nisswa</p>
-                <p class="new-product-price">150 000 тг</p>
-            </div>
-            <div class="new-product">
-                <img src="../static/images/newproduct4.png" alt="Product 4">
-                <p class="new-product-description">Lollygagger шезлонг из переработанных материалов</p>
-                <p class="new-product-price">200 000 тг</p>
-            </div>
-            <!-- Repeat for other products -->
+    <!-- About 1 - Bootstrap Brain Component -->
+<section class="py-3 py-md-5">
+    <div class="container">
+      <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
+        <div class="col-12 col-lg-6 col-xl-5">
+          <img class="img-fluid rounded" loading="lazy" src="../static/images/about-us.png" alt="About 1">
         </div>
-        <!-- <div class="new-button-container">
-            <button class="new-rounded-button">Узнать больше</button>
-        </div> -->
+        <div class="col-12 col-lg-6 col-xl-7">
+          <div class="row justify-content-xl-center">
+            <div class="col-12 col-xl-11">
+              <h2 class="mb-3">Кто мы такие?</h2>
+              <p class="lead fs-4 text-secondary mb-3">На EcoShop мы посвящены предложению отобранного ассортимента экологически чистых продуктов для осознанных потребителей. Наша миссия - сделать устойчивый образ жизни доступным, доступным и приятным для всех.</p>
+              <p class="mb-5">Мы - быстрорастущая компания, но никогда не теряем из виду наши основные ценности. Мы верим в сотрудничество, инновации и удовлетворение клиентов. Мы всегда ищем новые способы улучшить наши продукты и услуги.</p>
+              <div class="row gy-4 gy-md-0 gx-xxl-5X">
+                <div class="col-12 col-md-6">
+                  <div class="d-flex">
+                    <div class="me-4 text-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="bi bi-gear-fill" viewBox="0 0 16 16">
+                            <path style="fill: green;" d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                        </svg>
+                    </div>
+                    <div>
+                      <h2 class="h4 mb-3">Ваша устойчивая решение</h2>
+                      <p class="text-secondary mb-0">На EcoShop мы объединяем экологически осознанные ценности с инновационными цифровыми стратегиями.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div class="d-flex">
+                    <div class="me-4 text-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="bi bi-fire" viewBox="0 0 16 16">
+                            <path style="fill: green;" d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16Zm0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15Z" />
+                        </svg>
+                    </div>
+                    <div>
+                      <h2 class="h4 mb-3">Присоединяйтесь к движению EcoShop</h2>
+                      <p class="text-secondary mb-0">Присоединяйтесь к нам в путешествии по переосмыслению устойчивого образа жизни</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
     <script type="text/javascript">
         (function(d, m){
             var kommunicateSettings = 

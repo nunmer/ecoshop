@@ -134,7 +134,7 @@ body, html {
 .rounded-button {
     border: none;
     border-radius: 20px;
-    background-color: green;
+    background-color: #658C4A;
     color: white;
     padding: 10px 20px;
     cursor: pointer;
@@ -160,7 +160,7 @@ body, html {
 .category-heading {
     margin-bottom: 100px; /* Adjust to move the text lower */
     font-size: 40px; /* Adjust to make the text bigger */
-    color: darkgreen; /* Set the text color to green */
+    color: #658C4A; /* Set the text color to green */
 }
 
 .category-block {
@@ -189,7 +189,7 @@ body, html {
 }
 
 .green-container {
-    background-color: green;
+    background-color: #658C4A;
     padding: 20px;
     text-align: center;
     margin-top:40px;
@@ -289,7 +289,7 @@ body, html {
 }
 
 .new-product-price {
-    color: green; /* Change to green */
+    color: #658C4A; /* Change to green */
     margin-top: 5px;
 }
 
@@ -298,7 +298,7 @@ body, html {
 }
 
 .new-rounded-button {
-    background-color: green;
+    background-color: #658C4A;
     color: white;
     border: none;
     border-radius: 20px;
@@ -306,4 +306,74 @@ body, html {
     cursor: pointer;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
 
+.product {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    margin: 10px;
+}
+
+.product:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+}
+
+.product-details {
+    padding: 20px;
+}
+
+.product-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.product-price {
+    font-size: 18px;
+    color: #658C4A;
+}
+
+.btn-buy {
+    background-color: #658C4A;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-buy:hover {
+    background-color: darkgreen;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 1;
+    min-width: 250px;
+    width: 25%;
+}
+
+
+  
