@@ -1,0 +1,79 @@
+<!-- create_product.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style/addproduct.css">
+    <title>Create Product</title>
+</head>
+<body>
+    <div class="green-block">
+        Бесплатная доставка при покупке товаров от 20 тыс тенге
+    </div>
+
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="{% url 'index' %}">
+                <img src="../static/images/eco-logo.png" alt="Logo" class="logo">
+            </a>
+        </div>
+        <div class="navbar-center">
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search">
+                <img src="../static/images/search-icon.png" alt="Search" class="search-icon">
+            </div>
+        </div>
+        <div class="navbar-right">
+            {% if user.is_authenticated %}
+                <a href="{% url 'profile' %}">{{ user.username }}</a>
+                <a href="auth/logout"><img src="../static/images/logout-icon.png" width="30" alt="Logout" class="icon"></a>
+            {% else %}
+                <p>Авторизоваться</p>
+                <a href="/login"><img src="../static/images/user-icon.png" alt="User" class="icon"></a>
+            {% endif %}
+            <img src="../static/images/basket-icon.png" alt="Basket" class="icon">
+        </div>
+    </nav>
+
+    <div class="navigation">
+        <ul>
+            <li><a href="#">Новинки!</a></li>
+            <li><a href="/products/1">Одежда</a></li>
+            <li><a href="#">Банные</a></li>
+            <li><a href="#">Постельные</a></li>
+            <li><a href="#">Для Дома</a></li>
+            <li><a href="#">Мебель</a></li>
+            <li><a href="#">Обувь</a></li>
+            <li><a href="#">Аксессуары</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <h2>Create Product</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Product Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="text" id="price" name="price" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="text" id="quantity" name="quantity" required>
+            </div>
+            <div class="form-group file-upload">
+                <input type="file" id="picture" name="picture" class="file-input">
+                <button type="button">Add Picture</button>
+            </div>
+            <button type="submit">Create Product</button>
+        </form>
+    </div>
+</body>
+</html>
