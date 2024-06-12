@@ -38,7 +38,7 @@ body, html {
     object-fit: cover;
 }
 .change-pfp-button {
-    background-color: #007bff;
+    background-color: #658C4A;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -75,13 +75,31 @@ body, html {
     padding: 20px;
     background-color: #fff;
 }
+
 .my-products {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
     background-color: #658C4A;
     padding: 20px;
     border-radius: 10px;
     color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+.my-products h2 {
+    margin-right: 10px; /* Add some space between the text and the icon */
+}
+
+.add-product-link {
+    color: white;
+    text-decoration: none;
+}
+
+.add-product-link i {
+    font-size: 24px; /* Increase icon size */
+    color: white; /* Set icon color to white */
+}
+
 .navbar {
     background-color: #f4f4f4;
     display: flex;
@@ -99,8 +117,19 @@ body, html {
     max-width: 100px; /* Adjust as needed */
 }
 
+.green-block {
+    background-color: #658C4A;
+    color: white;
+    width: 100%;
+    height: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.0em;
+}
+
 .search-bar {
-    width: 300px; /* Adjust as needed */
+    width: 500px; /* Adjust as needed */
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;

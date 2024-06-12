@@ -1,59 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
-    <link rel="stylesheet" href="../static/style/profile.css">
-</head>
-<body>
+{% extends 'base.html' %}
 
-    <nav class="navbar">
-        <div class="navbar-left">
-            <a href="{% url 'index' %}">
-                <img src="../static/images/eco-logo.png" alt="Logo" class="logo">
-            </a>
-        </div>
-        <div class="navbar-center">
-            <div class="search-container">
-                <input type="text" class="search-bar" placeholder="Search">
-                <img src="../static/images/search-icon.png" alt="Search" class="search-icon">
-            </div>
-        </div>
-        <div class="navbar-right">
-            {% if user.is_authenticated %}
-                <a href="{% url 'profile' %}">{{ user.username }}</a>
-                <a href="/auth/logout"><img src="../static/images/logout-icon.png" width="30" alt="Logout" class="icon"></a>
-            {% else %}
-                <p>Авторизоваться</p>
-                <a href="/login"><img src="../static/images/user-icon.png" alt="User" class="icon"></a>
-            {% endif %}
-            <img src="../static/images/basket-icon.png" alt="Basket" class="icon">
-        </div>
-    </nav>
+{% block title %}User Profile{% endblock %}
 
-    <div class="navigation">
-        <ul>
-            <li><a href="#">Новинки!</a></li>
-            <li><a href="/products/1">Одежда</a></li>
-            <li><a href="#">Банные</a></li>
-            <li><a href="#">Постельные</a></li>
-            <li><a href="#">Для Дома</a></li>
-            <li><a href="#">Мебель</a></li>
-            <li><a href="#">Обувь</a></li>
-            <li><a href="#">Аксессуары</a></li>
-        </ul>
-    </div>
+{% block extra_css %}
+<link rel="stylesheet" href="../static/style/profile.css">
+{% endblock %}
 
-
+{% block content %}
+    <script src="../static/js/reg.js"></script>
     <div class="profile">
         <div class="left-side">
             <div class="profile-container">
                 <div class="profile-picture">
-                    <img src="../static/images/pfp.jpg" alt="Profile Picture">
-                    <button class="change-pfp-button">Change</button>
+                    <img id="profile-img" src="../static/images/pfp.jpg" alt="Profile Picture">
+                    <input type="file" id="file-input" style="display: none;">
+                    <button id="change-pfp-button">Change</button>
                 </div>
             </div>
+            
             <div class="profile-info">
                 <p><input type="text" class="input-field" value="{{user.username}}" disabled></p>
                 <p><input type="text" class="input-field" value="Sanzhar" disabled></p>
@@ -67,14 +31,16 @@
         <div class="right-side">
             <div class="my-products">
                 <h2>My Products</h2>
+                <a href="{% url 'add_product' %}" class="add-product-link"><i class="fa-solid fa-plus"></i></a>
             </div>
+            
 
             <div class="product-container">
                 {% for product in products %}
-                <div class="product" onmouseover="animateProduct(this)" onmouseout="resetProduct(this)">
+                <div class="product">
                     <a href="#">
                         {% if product.image_link %} 
-                            <img src="../../product_images/{{ product.image_link }}" alt="{{ product.name }}" width="300">
+                            <img src="../../product_images/{{ product.image_link }}" alt="{{ product.name }}" width="250">
                         {% comment %} <img src="{{ product.image_link }}" alt="{{ product.name }}"> {% endcomment %}
                         {% else %}
                             <img src="../static/images/default-product.jpg" width="300" alt="{{ product.name }}">
@@ -83,20 +49,11 @@
                     <p class="product-name">{{ product.name }}</p>
                     <p class="product-description">{{ product.description }}</p>
                     <p class="product-price">{{ product.price }} тг</p>
+                    <a class="btn btn-danger" href="{% url 'delete_product' pk=product.pk %}">Удалить</a>
                 </div>
                 {% endfor %}
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-        (function(d, m){
-            var kommunicateSettings = 
-                {"appId":"31f9fde9613e02a286b26865cc67d4969","popupWidget":true,"automaticChatOpenOnNavigation":true};
-            var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
-            s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
-            var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
-            window.kommunicate = m; m._globals = kommunicateSettings;
-        })(document, window.kommunicate || {});
-    </script>
-</body>
-</html>
+
+{% endblock %}

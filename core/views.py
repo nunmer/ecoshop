@@ -1,4 +1,5 @@
 import traceback
+from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic import TemplateView
 
@@ -47,3 +48,31 @@ def add_product(request):
     else:
         form = forms.ProductForm()
     return render(request, 'addproduct.html', {'form': form})
+
+
+def delete_product(request, pk):
+    try:
+        models.Product.objects.get(pk=pk).delete()
+        
+        return redirect('profile')
+    except Exception as e:
+        return JsonResponse(e, status=401)
+
+
+def purchase_product(request, pk):
+    try:
+        product = models.Product.objects.get(pk=pk)
+        category = product.category.id
+        print(category)
+
+        if product.quantity < 2 or product.quantity == None:
+            product.delete()
+        else:
+            product.quantity = product.quantity - 1
+            product.save()
+        
+        return redirect('/products/' + str(category))
+    
+    except Exception as e:
+        return redirect('/products/' + str(category))
+    

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="../static/style/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script src="../static/js/reg.js"></script>
+</head>
+<body>
+    <div class="green-block">
+        Бесплатная доставка при покупке товаров от 20 тыс тенге
+    </div>
+
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="{% url 'index' %}">
+                <img src="../static/images/eco-logo.png" alt="Logo" class="logo">
+            </a>
+        </div>
+        <div class="navbar-center">
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search">
+                <img src="../static/images/search-icon.png" alt="Search" class="search-icon">
+            </div>
+        </div>
+        <div class="navbar-right">
+            {% if user.is_authenticated %}
+                <a href="{% url 'profile' %}">{{ user.username }}</a>
+                <a href="/auth/logout"><img src="../static/images/logout-icon.png" width="30" alt="Logout" class="icon"></a>
+            {% else %}
+                <p>Авторизоваться</p>
+                <a href="/login"><img src="../static/images/user-icon.png" alt="User" class="icon"></a>
+            {% endif %}
+            <img src="../static/images/basket-icon.png" alt="Basket" class="icon">
+        </div>
+    </nav>
+
+    <div class="navigation mt-2">
+        <ul>
+            <li><a href="#">Новинки!</a></li>
+            <li><a href="/products/1">Одежда</a></li>
+            <li><a href="/products/2">Банные</a></li>
+            <li><a href="/products/3">Постельные</a></li>
+            <li><a href="/products/4">Для Дома</a></li>
+            <li><a href="/products/5">Мебель</a></li>
+            <li><a href="/products/6">Обувь</a></li>
+            <li><a href="/products/7">Аксессуары</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <script type="text/javascript">
+        (function(d, m){
+            var kommunicateSettings = 
+                {"appId":"31f9fde9613e02a286b26865cc67d4969","popupWidget":true,"automaticChatOpenOnNavigation":true};
+            var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+            s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+            var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+            window.kommunicate = m; m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
+    </script>
+
+</body>
+</html>

@@ -8,6 +8,8 @@ urlpatterns = [
     path('profile/', views.ProfileView.as_view(), name='profile'),
     path('products/<int:pk>', views.products_list, name='products'),
     path('products/add', views.add_product, name='add_product'),
+    path('products/delete/<int:pk>', views.delete_product, name='delete_product'),
+    path('products/purchase/<int:pk>', views.purchase_product, name='purchase_product'),
 ]
 
 if settings.DEBUG:

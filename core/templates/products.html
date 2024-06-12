@@ -1,70 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products Page</title>
-    <link rel="stylesheet" href="../static/style/product.css">
-    <script src="scripts.js" defer></script>
-</head>
-<body>
-    <div class="green-block">
-        Бесплатная доставка при покупке товаров от 20 тыс тенге
-    </div>
-    <nav class="navbar">
-        <div class="navbar-left">
-            <a href="{% url 'index' %}">
-                <img src="../static/images/eco-logo.png" alt="Logo" class="logo">
-            </a>
-        </div>
-        <div class="navbar-center">
-            <div class="search-container">
-                <input type="text" class="search-bar" placeholder="Search">
-                <img src="../static/images/search-icon.png" alt="Search" class="search-icon">
-            </div>
-        </div>
-        <div class="navbar-right">
-            {% if user.is_authenticated %}
-                <a href="{% url 'profile' %}">{{ user.username }}</a>
-                <a href="auth/logout"><img src="../static/images/logout-icon.png" width="30" alt="Logout" class="icon"></a>
-            {% else %}
-                <p>Авторизоваться</p>
-                <a href="/login"><img src="../static/images/user-icon.png" alt="User" class="icon"></a>
-            {% endif %}
-            <img src="../static/images/basket-icon.png" alt="Basket" class="icon">
-        </div>
-    </nav>
+{% extends 'base.html' %}
 
-    <div class="navigation">
-        <ul>
-            <li><a href="#">Новинки!</a></li>
-            <li><a href="/products/1">Одежда</a></li>
-            <li><a href="#">Банные</a></li>
-            <li><a href="#">Постельные</a></li>
-            <li><a href="#">Для Дома</a></li>
-            <li><a href="#">Мебель</a></li>
-            <li><a href="#">Обувь</a></li>
-            <li><a href="#">Аксессуары</a></li>
-        </ul>
-    </div>
+{% block title %}User Profile{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="../static/style/product.css">
+{% endblock %}
+
+{% block content %}
 
     <!-- Product Section -->
     <div class="product-container">
         {% for product in products %}
-        <div class="product" onmouseover="animateProduct(this)" onmouseout="resetProduct(this)">
+        <div class="product">
             <a href="#">
                 {% if product.image_link %}
-                    <div style="width: 300px; height: 300px; background-image: url('../../product_images/{{ product.image_link }}'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
-                    {% comment %} <img src="../../product_images/{{ product.image_link }}" alt="{{ product.name }}" width="300" height="300"> {% endcomment %}
+                    <img src="../../product_images/{{ product.image_link }}" alt="{{ product.name }}" width="250">
+                {% comment %} <img src="../../product_images/{{ product.image_link }}" alt="{{ product.name }}" width="300" height="300"> {% endcomment %}
                 {% else %}
                     <img src="../static/images/default-product.jpg" width="300" alt="{{ product.name }}">
                 {% endif %}
             </a>
-            <p class="product-name">{{ product.name }}</p>
+            <p class="product-name">{{ product.name }} | {{product.quantity}} шт. </p>
             <p class="product-description">{{ product.description }}</p>
             <p class="product-price">{{ product.price }} тг</p>
+
+            {% if user.id != product.owner_id %}
+            <a class="btn btn-success purchase_product" data-id={{product.id}} href="{% url 'purchase_product' pk=product.pk %}">Купить</a>
+            {% endif %}
         </div>
+        {% empty %}
+            Нет доступных продуктов
         {% endfor %}
     </div>
-</body>
-</html>
+
+{% endblock %}
